@@ -1,0 +1,32 @@
+For users which use old versions of Ubuntu
+Commands for setting up machines:
+sudo nano /etc/network/interfaces
+systemctl restart networking
+sudo nano /etc/dhcp/dhcpd.conf
+sudo nano /etc/default/isc-dhcp-server
+sudo systemctl restart isc-dhcp-server
+sudo systemctl status isc-dhcp-server
+Commands to display the details of network interface card:
+ifconfig (for Linux servers)
+ip addr, ip link and ip -s link (for CentOS)
+
+sudo nano /etc/netplan/01-network-manager-all.yaml
+sudo netplan try
+sudo netplan apply
+
+sudo apt install isc-dhcp-server
+sudo nano /etc/default/isc-dhcp-server
+sudo nano /etc/dhcp/dhcpd.conf
+sudo service isc-dhcp-server restart
+
+nmcli device status
+nmcli connection show
+netstat -i
+tcpdump --list-interfaces
+ip route get 8.8.8.8
+
+sudo apt update
+sudo apt install openssh-server
+sudo systemctl status ssh
+sudo ufw allow ssh
+
